@@ -12,8 +12,14 @@ from Athlete_wise_analysis import Athlete
 df=pd.read_csv('athlete_events.csv')
 region_df=pd.read_csv('noc_regions.csv')
 
+st.sidebar.image('https://e7.pngegg.com/pngimages/1020/402/png-clipart-2024-summer-olympics-brand-circle-area-olympic-rings-olympics-logo-text-sport.png')
 
-st.sidebar.title("Olympics Analysis")
+temp="""
+    <link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
+    <h3 style="color:Black;text-align:center;padding:10px;font-family: 'Bigshot One';font-size:30px;">Olympics Analysis</h3>
+    
+    """
+st.sidebar.markdown(temp,unsafe_allow_html=True)
 radio=st.sidebar.radio(
     'Select an Option',
     ('Medal Tally','Overall Analysis','Country-wise analysis','Athlete-wise analysis')
