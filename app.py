@@ -33,7 +33,12 @@ main_df=preprocesss.dummies(merged_df)
 
 
 if radio=='Medal Tally':
-    st.sidebar.header('Medal Tally')
+    temp="""
+    <link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
+    <h3 style="color:Black;text-align:center;padding:30px;font-family: 'Bigshot One';font-size:60px;">Medal Tally</h3>
+    
+    """
+    st.markdown(temp,unsafe_allow_html=True)
 
     year,country=medal_tally.country_year(main_df)
     
@@ -43,7 +48,9 @@ if radio=='Medal Tally':
     medals=medal_tally.fetch_medal_tally(main_df,selected_year,selected_country)
 
     if selected_year=='Overall' and selected_country=='Overall':
+       
         st.title('Overall Tally')
+        
     
     elif selected_year=='Overall' and selected_country!='Overall':
         st.title(selected_country+" Olympics Performance")
@@ -64,7 +71,12 @@ if radio=="Overall Analysis":
     City=main_df['City'].unique().shape[0]
     nations=main_df['region'].unique().shape[0]
 
-    st.title("Top Statistics")
+    temp="""
+    <link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
+    <h3 style="color:Black;text-align:center;padding-right:100px;font-family: 'Bigshot One';font-size:60px;">Top Statistics</h3>
+    
+    """
+    st.markdown(temp,unsafe_allow_html=True)
     col1,col2,col3=st.columns(3)
     with col1:
         st.header("Editions")
